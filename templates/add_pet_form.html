@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block title %}Add A Pet{% endblock %} {% block
+content %}
+<div class="container">
+  <h2>Add a New Pet</h2>
+  <form method="post">
+    {{ form.csrf_token }}
+    <div class="mb-3">
+      {{ form.name.label(class='form-label')}} {{
+      form.name(class='form-control')}}
+    </div>
+    <div class="mb-3">
+      {{ form.species.label(class='form-label') }} {{
+      form.species(class='form-control')}}
+    </div>
+    <div class="mb-3">
+      {{ form.photo_url.label(class='form-label') }} {{
+      form.photo_url(class='form-control')}}
+    </div>
+    <div class="mb-3">
+      {{ form.age.label(class='form-label') }} {{
+      form.age(class='form-control')}}
+    </div>
+    <div class="mb-3">
+      {{ form.available.label(class='form-check-label') }} {{
+      form.available(class='form-check-input')}}
+    </div>
+    <div class="mb-3">
+      {{ form.notes.label(class='form-label') }} {{
+      form.notes(class='form-control')}}
+    </div>
+    <div class="mb-3">{{ form.submit(class='btn btn-success') }}</div>
+  </form>
+</div>
+
+{% endblock %}
